@@ -50,12 +50,11 @@ var tabledata = JSON.stringify(Lockr.getAll());
 
 //create Tabulator on DOM element with id "table"
 var table = new Tabulator("#table", {
-	height: 580, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value) 365 pagination, 5 rows
+	height: 580, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
 	initialSort: [{
 		column: "id",
 		dir: "asc"
 	}], //sort by this first
-	//responsiveLayout: true,
 	reactiveData: true,
 	pagination: "local",
 	paginationSize: 9,
