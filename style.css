@@ -51,3 +51,13 @@
 #table > div.tabulator-tableholder > div.tabulator-placeholder > div {
     color: black;
 }
+
+/* =================== Validation errors ======================== */
+.error {
+    color: red;
+}
+
+body > div.bootstrap-growl.alert.alert-error {
+    background-color: #F8D7DA;
+    color: #9B1C24;
+}
