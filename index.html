@@ -15,7 +15,6 @@
         <link href="assets/js/tabulator-master/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet"/>
     </head>
     <body class="bg-dark body min-vh-100">
-        <!-- Header-->
         <header class="bg-dark bg-gradient body d-inline-flex header justify-content-center text-center text-white">
             <h1 class="fst-normal pt-3"> <i class="fa fa-book"></i> MetaBook </h1>
         </header>
@@ -38,10 +37,54 @@
                 <input type="text" class="form-control" id="rating" name="rating" placeholder="Enter rating" aria-describedby="rating" required/>
             </div><span class="gap-5"> <button type="button" class="bg-gradient bg-success btn btn-outline-success btn-success me-4 text-white w-25" id="addButton">Add</button> <button type="button" class="bg-gradient bg-warning btn btn-outline-warning btn-warning me-4 text-dark w-25" data-bs-toggle="modal" data-bs-target="#editModal"> Edit </button> </span>
         </form>
-
+        <!-- Download buttons -->
+        <div class=" text-end" id="download">
+            <button class="bg-dark bg-gradient bg-opacity-75 btn btn-dark btn-sm mb-2 shadow-sm" id="download-csv">Download CSV</button>
+            <button class="bg-dark bg-gradient bg-opacity-75 btn btn-dark btn-sm mb-2" id="download-json">Download JSON</button>
+            <button class="bg-dark bg-gradient bg-opacity-75 btn btn-dark btn-sm mb-2" id="download-xlsx">Download XLSX</button>
+            <button class="bg-dark bg-gradient bg-opacity-75 btn btn-dark btn-sm mb-2" id="download-pdf">Download PDF</button>
+        </div>
         <!-- Table placeholder-->
         <div class="bg-gradient bg-light bg-opacity-50  table-placeholder" id="table"></div>
-
+        <!-- Modal - editForm-->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="modal-form">
+                            <div class="mb-3">
+                                <label for="modal-id"> Book ID </label>
+                                <input type="text" class="form-control" id="modal-id" name="modal-id" placeholder="Enter Book ID" aria-describedby="modal-id" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="bookTitle"> Book Title </label>
+                                <input type="text" class="form-control" id="modal-bookTitle" name="modal-bookTitle" placeholder="Enter Book Title" aria-describedby="modal-bookTitle" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="author">Book Author</label>
+                                <input type="text" class="form-control" id="modal-author" name="modal-author" placeholder="Enter Book Author" aria-describedby="modal-author" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="isbn">ISBN</label>
+                                <input type="text" class="form-control" id="modal-isbn" name="modal-isbn" placeholder="Enter ISBN" aria-describedby="isbn" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rating">Rating</label>
+                                <input type="text" class="form-control" id="modal-rating" name="modal-rating" placeholder="Enter rating" aria-describedby="rating" required/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal-cancel">Close</button>
+                        <button type="button" class="btn btn-primary" id="modal-save">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Footer-->
         <footer class="bg-dark bg-gradient footer-placeholder" style="grid-area:Footer;"></footer>
         <!--============= Scripts =======================-->
