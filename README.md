@@ -153,3 +153,14 @@ It also completley brakes on jquery validation plugin where it tries to rearange
 Syntax validation passes on [Esprima](https://esprima.org/demo/validate.html) which is not opinionated about coding styles and formating (eg. JSLint's "use spaces instead of tabs")
 
 </br>
+
+## Deployment 
+### Local
+To locally deploy the project clone the Git repository with
+
+>git clone https://github.com/Azelliott/meta-book.git
+
+### Demo
+To visit live demo of the project on GitHub Pages go to:
+
+>https://azelliott.github.io/meta-book/
