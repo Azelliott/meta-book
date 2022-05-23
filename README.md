@@ -1,108 +1,155 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# MetaBook
 
-Welcome Azelliott,
+## Description 
+MetaBook is a CRUD (Create, Read, Update, Delete) application for book metadata management, it's using localStorage as an backend to save and retrieve the book information.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+</br>
+Some of the features:
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* Fully responsive design.
+* Ability to download the book information in variety of formats.
+* Input validation
+* Use of VirtualDom for large data sets
+* Clipboard functionality
 
-## Gitpod Reminders
+Same skeleton can be used for any CRUD application like inventory or notes.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Technologies used
 
-A blue button should appear to click: _Make Public_,
+* Bootstrap 5 https://getbootstrap.com/docs/5.0/getting-started/introduction/
+* jQuery 3.6  https://jquery.com/
+* CSS Grid    https://web.dev/learn/css/grid/
+* Tabulator.js    http://tabulator.info/
+* Lockr   https://github.com/tsironis/lockr
+* Sheet.js    https://sheetjs.com/
+* JSPDF   https://parall.ax/products/jspdf
 
-Another blue button should appear to click: _Open Browser_.
+## Responsive Design and Styling
+Responsive design was achieved by utilizing new CSS Grid, so there is no need for multiple media queries.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+## App Functionality
 
-Another blue button should appear to click: _Open Browser_.
+### Main Form
+* Add data to localStorage
+* Show data from localStorage in table
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+App will add the book ID by itself, it will scan the localStorage for keys and add +1 to the key with the largest number
+</br>
 
-To log into the Heroku toolbelt CLI:
+* Input validation
+    * Prevents empty entries
+    * Number validation
+    * Range validation
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* Alert on sucessful add to localStorge
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Edit Form
+* Add or modify the data in localStorage 
+* Show modified data in the table
+* Input validation
+    * Prevents empty entries
+    * Number validation
+    * Range validation
 
-------
+* Alert on succesfull record modification or add
 
-## Release History
+By default, modal is not going to close by itself in case you want to enter multiple records in a row, to exit - click on cancel or anywhere outside of form to close the modal.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+</br>
+If the key (ID) exists, record will be modified, if not, new record will be added to localStorage.
+ 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Table functionality
+#### Sorting
+* Each column can be sorted asc/desc by either string or number, default sort is on ID column
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+#### Pagination
+* Pagination and page size options
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+#### Virtual DOM rendering
+* Supports on the fly loading of huge data sets
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### Delete data
+* Click on the X button to remove the entries from localStorage and the table, it will trigger the delete alert on success.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Copy to and from Clipboard
+* Click on table and press ctrl+c to copy entire table to the clipboard, you can then paste it to something like Excel sheet.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* Don't want to enter data manually? Just copy the properly formtted data from Excel, click on the table and paste it in, that way you can import data in bulk without going one by one through the form.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### Downloads in multiple formats
+* CSV
+* JSON
+* XLSX - powered by Sheets.js
+* PDF - powered by JSPDF
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Screenshots
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+MetaBook main page
+</br>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![MetaBook main](assets/images/screenshots/metabook-main.png "Main Metabook page")
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Form validation
+</br>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![MetaBook form validation](assets/images/screenshots/metbook-form-validation.png "MetaBook form validation")
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Edit Form
+</br>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![MetaBook edit form](assets/images/screenshots/metabook-edit-form.png "MetaBook Edit Form")
 
-------
+localStorage
 
-## FAQ about the uptime script
+<br/>
 
-**Why have you added this script?**
+![MetaBook localStorage](assets/images/screenshots/metabook-localStorage.PNG "MetaBook localStorage")
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+</br>
 
-**How will this affect me?**
+## Testing
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Windows 10
+* Edge - version 100.0.1185.39
+* Chrome - version 101.0.4951.41
+* Firefox - version 99.0.1
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+#### Ubuntu 22.04
+* Chrome - version 101.0.4951.41
+* Firefox - 99.0.1
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+#### iPadOS
+* Safari - version 15.3
 
-**So….?**
+Multiple resolutions tested
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+No bugs found after testing
 
-**Can I opt out?**
+### Code  Validation 
+#### w3c HTML validator
+* index.html passes the official w3 validator https://validator.w3.org/index.html
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### w3C Jigsaw CSS validator
+* style.css passes the official CSS vlidator https://jigsaw.w3.org/css-validator/validator 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### JSLint
+Doesn't seem to like jquery way of writting code since:
 
-**Anything more?**
+"JSLint defines a professional subset of JavaScript, a stricter language than that defined by Edition 3 of the ECMAScript Language Specification. The subset is related to recommendations found in Code Conventions for the JavaScript Programming Language."
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+</br>
+Meaning it's using a "safe" subset of Javascript that is unlikly to break accross JS implementations.
 
----
+As such it throws errors on basic jquery code such as:
+> $(document).ready(function() {})
 
-Happy coding!
+</br>
+It also completley brakes on jquery validation plugin where it tries to rearange the validation object which is clearly wrong and it wouldn't work, same goes even for default setup for Tabulator.js
+
+</br>
+Syntax validation passes on [Esprima](https://esprima.org/demo/validate.html) which is not opinionated about coding styles and formating (eg. JSLint's "use spaces instead of tabs")
+
+</br>
