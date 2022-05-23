@@ -1,0 +1,53 @@
+/* ======================== Main CSS Grid ============================= */
+.body {
+    display: grid;
+    grid-template-columns: 10% 1fr minmax(300px, 1fr) 1fr 10%;
+    grid-template-rows: 100px 100px auto 100px auto auto 5%;
+    grid-template-areas: 'Header Header Header Header Header' '. . . . .' '. . Form . .' '. . . . .' '. Buttons Buttons Buttons .' '. Table Table Table .' 'Footer Footer Footer Footer Footer';
+    background: url("assets/images/background.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    grid-area: Header;
+}
+
+.form {
+    grid-area: Form;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+#table {
+    grid-area: Table;
+}
+
+#footer {
+    grid-area: Footer;
+}
+
+/* ====================== Custom Tabulator.js styles ==================== */
+.tabulator-footer {
+    background-color: rgb(200, 140, 105)!important;
+}
+
+.tabulator-paginator {
+    color: #DEE2E6!important;
+}
+
+.tabulator-page.active {
+    background-color: #5F5F5B!important;
+    border-color: #DEE2E6!important;
+    color: #FFC519!important;
+}
+
+#download {
+    grid-area: Buttons;
+}
+
+#table > div.tabulator-tableholder > div.tabulator-placeholder > div {
+    color: black;
+}
