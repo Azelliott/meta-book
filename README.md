@@ -12,7 +12,7 @@ Some of the features:
 * Use of VirtualDom for large data sets
 * Clipboard functionality
 
-Same skeleton can be used for any CRUD application like inventory or notes.
+Same skeleton can potentially be used for any CRUD application like inventory or notes, provided you change HTML form and table column names.
 
 
 ## Technologies used
@@ -64,7 +64,7 @@ If the key (ID) exists, record will be modified, if not, new record will be adde
 
 ### Table functionality
 
-First 5 rows will be automatically populated and re-added on each refresh, this is for demo purposes to show propery formatted data in the table.
+First 5 rows will be automatically populated and re-added on each refresh, this is for demo purposes to show properly formatted data in the table.
 
 #### Sorting
 * Each column can be sorted asc/desc by either string or number, default sort is on ID column
