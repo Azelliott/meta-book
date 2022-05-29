@@ -26,7 +26,8 @@ Same skeleton can be used for any CRUD application like inventory or notes.
 * JSPDF   https://parall.ax/products/jspdf
 
 ## Responsive Design and Styling
-Responsive design was achieved by utilizing new CSS Grid, so there is no need for multiple media queries.
+Responsive design was achieved by utilizing new CSS Grid, so there is no need for multiple media queries. </br>
+Background found on https://unsplash.com/images
 
 
 ## App Functionality
@@ -129,13 +130,17 @@ Multiple resolutions tested
 No bugs found after testing
 
 ### Code  Validation 
-#### w3c HTML validator
+#### HTML validation
+##### w3c HTML validator
 * index.html passes the official w3 validator https://validator.w3.org/index.html
 
-#### w3C Jigsaw CSS validator
+#### CSS validation
+##### w3C Jigsaw CSS validator
 * style.css passes the official CSS vlidator https://jigsaw.w3.org/css-validator/validator 
 
-#### JSLint
+
+#### JS validation
+##### JSLint
 Doesn't seem to like jquery way of writting code since:
 
 "JSLint defines a professional subset of JavaScript, a stricter language than that defined by Edition 3 of the ECMAScript Language Specification. The subset is related to recommendations found in Code Conventions for the JavaScript Programming Language."
@@ -150,9 +155,32 @@ As such it throws errors on basic jquery code such as:
 It also completley brakes on jquery validation plugin where it tries to rearange the validation object which is clearly wrong and it wouldn't work, same goes even for default setup for Tabulator.js
 
 </br>
-Syntax validation passes on [Esprima](https://esprima.org/demo/validate.html) which is not opinionated about coding styles and formating (eg. JSLint's "use spaces instead of tabs")
+
+##### Esprima
+Syntax validation passes on Esprima (https://esprima.org/demo/validate.html) which is not opinionated about coding styles and formating (eg. JSLint's "use spaces instead of tabs")
 
 </br>
+
+##### JSHint
+Validation passed on JSHint
+
+Notes: 
+To properly lint the jquery with es6 syntax, add these lines to top of your .js file
+
+```
+ /* globals $:false */ 
+ /* jshint esversion: 6 */ 
+```
+
+or add this to your .jshintrc file </br>
+
+``` 
+  "globals": {
+    "esversion": 6,
+    "$": false,
+    "jQuery": true
+  }
+  ```
 
 ## Deployment 
 ### Local
