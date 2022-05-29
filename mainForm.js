@@ -1,3 +1,6 @@
+/* globals $:false */
+/* jshint esversion: 6 */    
+
 $(document).ready(function() {
 
 	$("form").validate({
@@ -47,8 +50,8 @@ $(document).ready(function() {
 				isbn: isbn,
 				rating: rating
 			});
-			table.updateOrAddData(JSON.stringify(Lockr.getAll())) // Update existing or add new data
-			$(".form").trigger('reset') // Clear form inputs
+			table.updateOrAddData(JSON.stringify(Lockr.getAll())); // Update existing or add new data
+			$(".form").trigger('reset'); // Clear form inputs
 			// Trigger success alert
 			$.bootstrapGrowl("Record saved succesfully!", {
 				ele: 'body', // which element to append to

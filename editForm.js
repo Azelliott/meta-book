@@ -1,3 +1,6 @@
+/* globals $:false */
+/* jshint esversion: 6 */   
+
 $('#editModal').on('shown.bs.modal', function() {
 	$(".modal-form").validate({
 		// Specify validation rules
@@ -50,8 +53,8 @@ $('#editModal').on('shown.bs.modal', function() {
 				isbn: isbn,
 				rating: rating
 			});
-			table.updateOrAddData(JSON.stringify(Lockr.getAll())) // Update existing or add new data
-			$(".modal-form").trigger('reset') // Clear form inputs
+			table.updateOrAddData(JSON.stringify(Lockr.getAll())); // Update existing or add new data
+			$(".modal-form").trigger('reset'); // Clear form inputs
 			$.bootstrapGrowl("Record edited succesfully!", {
 				ele: 'body', // which element to append to
 				type: 'info', // (null, 'info', 'error', 'success')
@@ -69,4 +72,4 @@ $('#editModal').on('shown.bs.modal', function() {
 		}
 	});
 
-})
+});
