@@ -63,6 +63,9 @@ If the key (ID) exists, record will be modified, if not, new record will be adde
  
 
 ### Table functionality
+
+First 5 rows will be automatically populated and re-added on each refresh, this is for demo purposes to show propery formatted data in the table.
+
 #### Sorting
 * Each column can be sorted asc/desc by either string or number, default sort is on ID column
 
