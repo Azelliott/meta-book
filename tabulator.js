@@ -1,3 +1,6 @@
+/* globals $:false */
+/* jshint esversion: 6 */ 
+
 // ========== Table Functions =================== //
 
 // Function to load data into localStorage
@@ -8,28 +11,28 @@ function populateTable() {
 		author: "Miguel De Cervantes",
 		isbn: "978-0-99-7025549-1",
 		rating: "3"
-	})
+	});
 	Lockr.set(2, {
 		id: 2,
 		title: "Robinson Crusoe",
 		author: "Daniel Defoe",
 		isbn: "931-1-83-1937145-1",
 		rating: "5"
-	})
+	});
 	Lockr.set(3, {
 		id: 3,
 		title: "Nightmare Abbey",
 		author: "Thomas Love Peacock",
 		isbn: "975-2-71-3987452-5",
 		rating: "4"
-	})
+	});
 	Lockr.set(4, {
 		id: 4,
 		title: "The Adventures of Huckleberry Finn",
 		author: "Mark Twain",
 		isbn: "934-3-36-7431291-1",
 		rating: "5"
-	})
+	});
 	Lockr.set(5, {
 		id: 5,
 		title: "Moby Dick",
@@ -54,7 +57,7 @@ var table = new Tabulator("#table", {
 	initialSort: [{
 		column: "id",
 		dir: "asc"
-	}], //sort by this first
+	}], //sort by this column first
 	reactiveData: true,
 	pagination: "local",
 	paginationSize: 9,
@@ -62,11 +65,10 @@ var table = new Tabulator("#table", {
 	clipboard: true, // Copy data from table to clipboard
 	clipboardPasteAction: "replace", // replace table data on paste
 	data: tabledata, //assign data to table
-	layoutColumnsOnNewData: true, // Redraw columns on new data
 	placeholder: "No Data Available", //display message to user on empty table
 	layout: "fitColumns", //fit columns to width of table (optional)
 	layoutColumnsOnNewData: true, //adjust width every time the table updates
-	responsiveLayout: "collapse", // hide rows that no longer fit
+	responsiveLayout: "collapse", // collapse rows that no longer fit
 	columns: [ //Define Table Columns
 		{
 			field: "id",
@@ -126,8 +128,8 @@ var table = new Tabulator("#table", {
 					}, // 'top', or 'bottom'
 					align: 'right', // ('left', 'right', or 'center')
 					width: 250, // (integer, or 'auto')
-					delay: 4000,
-					allow_dismiss: true,
+					delay: 4000, // allow delay
+					allow_dismiss: true, //allow alert dismiss
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
 			}
@@ -140,7 +142,7 @@ var table = new Tabulator("#table", {
 //trigger download of data.csv file
 $("#download-csv").click(function(e) {
 	table.download("csv", "data.csv");
-})
+});
 
 //trigger download of data.json file
 $("#download-json").click(function(e) {
