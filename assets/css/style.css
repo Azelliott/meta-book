@@ -4,7 +4,7 @@
     grid-template-columns: 10% 1fr minmax(300px, 1fr) 1fr 10%;
     grid-template-rows: 100px 100px auto 100px auto auto 5%;
     grid-template-areas: 'Header Header Header Header Header' '. . . . .' '. . Form . .' '. . . . .' '. Buttons Buttons Buttons .' '. Table Table Table .' 'Footer Footer Footer Footer Footer';
-    background: url("assets/images/background.jpg");
+    background: url("../images/background.jpg");
     background-size: cover;
     width: 100%;
     height: 100%;
