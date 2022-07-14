@@ -195,3 +195,13 @@ To locally deploy the project clone the Git repository with
 To visit live demo of the project on GitHub Pages go to:
 
 >https://azelliott.github.io/meta-book/
+
+</br>
+
+## Features to implement
+
+Some extra features I'm thinking of implementing:
+
+* Option to upload book cover
+* Add option to choose the backend (IndexedDB and/or SQLIte)
+* Connet to API to search for missing metadata (ISBNdb.com or Google Book Data API)
